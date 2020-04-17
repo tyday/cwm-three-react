@@ -1,14 +1,33 @@
-ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    list-style-type: none;
-    color: var(--text-color-light);
+.topnav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style-type: none;
+  color: var(--text-color-light);
+  margin-bottom: 0;
+  margin-left: 0;
+  background-color: var(--color-primary);
 }
-ul li{
-    margin: 2px 16px
+ul li {
+  margin: 2px 16px;
 }
-ul a{
-    color: var(--link-color-menu, #fff);
-    text-decoration: none;
+ul a {
+  color: var(--link-color-menu, #fff);
+  text-decoration: none;
+}
+.topnav {
+  /* background-color: var(--color-primary); */
+  position: sticky;
+  top: 0;
+  margin-bottom: 2rem;
+}
+.menu-spacer {
+  height: 2rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
 }

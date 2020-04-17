@@ -1,8 +1,21 @@
 .heroImage{
     height:80vh;
-    /* position: absolute; */
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    object-fit: cover;
 }
 .siteLogo{
     position: absolute;
     z-index: 1;
+    margin: auto;
+    left: calc((100vw - 900px)/2);
+    top:20vh;
+}
+header{
+    height: 80vh;
+    /* overflow: hidden; */
+    background: #2F4268;
+    /* margin-bottom: 1.45rem; */
 }

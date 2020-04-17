@@ -13,6 +13,7 @@ const Header = ({siteTitle, isIndex}) => {
       heroImage: file(relativePath: {eq: "Cbus Skyline at Night.jpeg"}) {
         childImageSharp {
           fluid {
+            originalImg
             ...GatsbyImageSharpFluid
           }
         }
@@ -30,17 +31,18 @@ const Header = ({siteTitle, isIndex}) => {
   let headerDiv;
   if(isIndex){
     headerDiv = (
-      <div>
+      <div >
         <Img
           fixed={data.logo.childImageSharp.fixed}
           className="siteLogo"
         />
-        <Img 
+        <img className="heroImage"  src={data.heroImage.childImageSharp.fluid.originalImg} alt="" srcset=""/>
+        {/* <Img 
           fluid={data.heroImage.childImageSharp.fluid} 
           style={{ maxHeight: "100%" }}
           className="heroImage" fit="OUTSIDE" 
           imgStyle={{ objectFit: "cover", }}
-          />
+          /> */}
       </div>
     )
   } else{
@@ -66,15 +68,12 @@ const Header = ({siteTitle, isIndex}) => {
     )
   }
   return (
-  <header
-    style={{
-      background: `#2F4268`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+    <div>
+  <header>
     {headerDiv}
-    <Menu />
+    
   </header>
+  </div>
 )}
 
 Header.propTypes = {

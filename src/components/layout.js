@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Menu from "./menu"
 import "./layout.css"
 
 // query MyQuery {
@@ -29,6 +30,7 @@ const Layout = ({ children, isIndex }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} isIndex={isIndex} />
+      <Menu />
       <div
         style={{
           margin: `0 auto`,
