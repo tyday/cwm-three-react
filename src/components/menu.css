@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    color: var(--text-color-light);
+}
+ul li{
+    margin: 2px 16px
+}
+ul a{
+    color: var(--link-color-menu, #fff);
+    text-decoration: none;
+}

@@ -1,21 +1,56 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Img from "gatsby-image"
+import Menu from "./menu"
+import "./header.css"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+
+const Header = ({siteTitle, isIndex}) => {
+  const data = useStaticQuery(graphql`
+    query HeroImageQuery {
+      heroImage: file(relativePath: {eq: "Cbus Skyline at Night.jpeg"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      logo: file(relativePath: {eq: "Existing Logo - White.png"}) {
+        childImageSharp {
+          fixed(width: 890, height: 370) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
+  let headerDiv;
+  if(isIndex){
+    headerDiv = (
+      <div>
+        <Img
+          fixed={data.logo.childImageSharp.fixed}
+          className="siteLogo"
+        />
+        <Img 
+          fluid={data.heroImage.childImageSharp.fluid} 
+          style={{ maxHeight: "100%" }}
+          className="heroImage" fit="OUTSIDE" 
+          imgStyle={{ objectFit: "cover", }}
+          />
+      </div>
+    )
+  } else{
+    headerDiv = (
+      <div
       style={{
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
-      }}
-    >
+      }}>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -28,8 +63,19 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    )
+  }
+  return (
+  <header
+    style={{
+      background: `#2F4268`,
+      marginBottom: `1.45rem`,
+    }}
+  >
+    {headerDiv}
+    <Menu />
   </header>
-)
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
