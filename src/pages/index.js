@@ -10,9 +10,9 @@ import HomepageCard1 from "../components/homepageCard1"
 const IndexPage = ({data, }) => (
   <Layout isIndex={true}>
     <SEO title="Home" />
-    <h3>Deep Insights.</h3>
-    <h3>Long-Term Goal Acquisition.</h3>
-    <h3>No Bullshit.</h3>
+    <h2>Deep Insights.</h2>
+    <h2>Long-Term Goal Acquisition.</h2>
+    <h2>No Bullshit.</h2>
     <HomepageCard1 card_info={data.cardOne} image_info={data.imageOne}/>
     <HomepageCard1 card_info={data.cardTwo} image_info={data.imageTwo}/>
     <HomepageCard1 card_info={data.cardThree} image_info={data.imageThree}/>

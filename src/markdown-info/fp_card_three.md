@@ -2,7 +2,7 @@
 title: "fp_three"
 image_side: "none"
 ---
-Chaney Wealth Management is Committed to:
+**Chaney Wealth Management is Committed to:**
 * **Helping** you maintain the standard of living you have worked so hard to achieve.
 * **Simplifying** the retirement planning and investment process so you can confidently spend more time doing the things you are about most. 
 * **Developing** wealth management strategies that anticipate needs before they arise. 

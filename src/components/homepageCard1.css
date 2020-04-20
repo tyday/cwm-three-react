@@ -10,3 +10,6 @@
     /* display: block; */
     flex: 1 1 607px;
 }
+.fpCard-image.fpCard-image--large{
+    flex: 1 1 800px;
+}
