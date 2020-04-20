@@ -36,7 +36,7 @@ const Header = ({siteTitle, isIndex}) => {
           fixed={data.logo.childImageSharp.fixed}
           className="siteLogo"
         />
-        <img className="heroImage"  src={data.heroImage.childImageSharp.fluid.originalImg} alt="" srcset=""/>
+        <img className="heroImage"  src={data.heroImage.childImageSharp.fluid.originalImg} alt="" srcSet=""/>
         {/* <Img 
           fluid={data.heroImage.childImageSharp.fluid} 
           style={{ maxHeight: "100%" }}
