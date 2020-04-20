@@ -1,0 +1,12 @@
+.fpCard{
+    display: flex;
+    flex-direction: row;
+}
+.fpCard-text{
+    /* display: block; */
+    flex: 3 1 607px;
+}
+.fpCard-image{
+    /* display: block; */
+    flex: 1 1 607px;
+}
