@@ -1,18 +1,8 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from "gatsby"
 
-import "./homepageCard1.css"
+import "./homepageCard.css"
 
-const HomepageCard1 = ({card_info, image_info}) => {
-    const data = useStaticQuery(graphql`
-    query FPImageQuery1 {
-      ImageOne: file(relativePath: {eq: "fp_one.bmp"}) {
-        id
-        publicURL
-      }
-    }
-  `)
+const HomepageCard = ({card_info, image_info}) => {
     const {frontmatter, html } = card_info
     console.log(image_info)
     return (
@@ -23,11 +13,11 @@ const HomepageCard1 = ({card_info, image_info}) => {
             <div className="fpCard-text"
                 dangerouslySetInnerHTML={{__html: html}}
             />
-            { frontmatter.image_side == "right" &&
+            { frontmatter.image_side === "right" &&
             <img className="fpCard-image" src={image_info.publicURL} alt=""/>
             }
         </div>
     )
 }
 
-export default HomepageCard1
+export default HomepageCard

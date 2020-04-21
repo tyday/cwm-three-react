@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
-import Menu from "./menu"
 import "./header.css"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -20,23 +19,37 @@ const Header = ({siteTitle, isIndex}) => {
       }
       logo: file(relativePath: {eq: "Existing Logo - White.png"}) {
         childImageSharp {
-          fixed(width: 890, height: 370) {
+          fixed( height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      logoSecondary: file(relativePath: {eq: "Existing Logo - White.png"}) {
+        childImageSharp {
+          fixed(height: 60) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
+    
   `)
-  console.log(data)
+  let headerClass = (isIndex ? "header-main" : "header-secondary")
   let headerDiv;
   if(isIndex){
     headerDiv = (
       <div >
         <Img
           fixed={data.logo.childImageSharp.fixed}
+          imgStyle={{
+            objectFit: "contain",
+          }}
           className="siteLogo"
+          alt="Chaney Wealth Management"
         />
-        <img className="heroImage"  src={data.heroImage.childImageSharp.fluid.originalImg} alt="" srcSet=""/>
+        <img className="heroImage"  
+          src={data.heroImage.childImageSharp.fluid.originalImg} 
+          alt="" srcSet={data.heroImage.childImageSharp.fluid.srcSet}/>
         {/* <Img 
           fluid={data.heroImage.childImageSharp.fluid} 
           style={{ maxHeight: "100%" }}
@@ -47,13 +60,7 @@ const Header = ({siteTitle, isIndex}) => {
     )
   } else{
     headerDiv = (
-      <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}>
-      <h1 style={{ margin: 0 }}>
+      <div>
         <Link
           to="/"
           style={{
@@ -61,19 +68,22 @@ const Header = ({siteTitle, isIndex}) => {
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <Img
+          fixed={data.logoSecondary.childImageSharp.fixed}
+          imgStyle={{
+            objectFit: "contain",
+          }}
+          className="siteLogo"
+          alt="Chaney Wealth Management"
+        />
         </Link>
-      </h1>
     </div>
     )
   }
   return (
-    <div>
-  <header>
-    {headerDiv}
-    
+  <header className={headerClass}>
+    {headerDiv}    
   </header>
-  </div>
 )}
 
 Header.propTypes = {

@@ -5,17 +5,31 @@
     left:0;
     width: 100%;
     object-fit: cover;
+    object-position: top;
 }
 .siteLogo{
-    position: absolute;
     z-index: 1;
-    margin: auto;
-    left: calc((100vw - 900px)/2);
+    /* left: calc((100vw - 900px)/2); */
+    margin-left: 10vw;
     top:20vh;
+
+    /* position: absolute;
+    z-index: 1;
+    bottom: 0; */
 }
-header{
+.header-main{
     height: 80vh;
     /* overflow: hidden; */
     background: #2F4268;
     /* margin-bottom: 1.45rem; */
+}
+.header-secondary{
+    /* height: 100px; */
+    background-color: var(--color-primary);
+}
+.header-secondary .siteLogo{
+    margin-left: 10px;
+    margin-bottom: -2rem;
+    top: 0;
+    position: relative;
 }

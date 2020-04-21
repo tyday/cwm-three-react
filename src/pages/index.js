@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-import HomepageCard1 from "../components/homepageCard1"
+import HomepageCard from "../components/homepageCard"
 
 const IndexPage = ({data, }) => (
   <Layout isIndex={true}>
@@ -13,9 +13,9 @@ const IndexPage = ({data, }) => (
     <h2>Deep Insights.</h2>
     <h2>Long-Term Goal Acquisition.</h2>
     <h2>No Bullshit.</h2>
-    <HomepageCard1 card_info={data.cardOne} image_info={data.imageOne}/>
-    <HomepageCard1 card_info={data.cardTwo} image_info={data.imageTwo}/>
-    <HomepageCard1 card_info={data.cardThree} image_info={data.imageThree}/>
+    <HomepageCard card_info={data.cardOne} image_info={data.imageOne}/>
+    <HomepageCard card_info={data.cardTwo} image_info={data.imageTwo}/>
+    <HomepageCard card_info={data.cardThree} image_info={data.imageThree}/>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
