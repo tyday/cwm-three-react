@@ -6,8 +6,8 @@ const Menu = () => {
     return (
         <div className="topnav">
             <ul>
-                <Link to="/page-2/"><li>About</li></Link>
-                <Link to="/page-2/"><li>How I Can Help</li></Link>
+                <Link to="/about/"><li>About</li></Link>
+                <Link to="/help/"><li>How I Can Help</li></Link>
                 <Link to="/page-2/"><li>Contact</li></Link>
             </ul>
             <div className="menu-spacer"></div>
