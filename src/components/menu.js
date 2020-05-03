@@ -1,17 +1,69 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { createRef, useState, useEffect } from "react"
 import "./menu.css"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Menu = () => {
+const Menu = ({children, sticky=false, ...rest}) => {
+    const className = "topnav-logo"
+    const [isSticky, setIsSticky] = useState(false)
+    const ref = React.createRef()    
+    console.log(ref)
+    const data = useStaticQuery(graphql`
+    query topnavlogo {
+        logoSecondary: file(relativePath: {eq: "Existing Logo - White.png"}) {
+            childImageSharp {
+              fixed(height: 50) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+      }
+    `)
+    useEffect(()=>{
+        const cachedRef = ref.current,
+            observer = new IntersectionObserver(
+                ([e]) => setIsSticky(e.intersectionRatio < 1),
+                {threshold: [1]}
+              )
+    
+        observer.observe(cachedRef)
+        
+        // unmount
+        return function(){
+          observer.unobserve(cachedRef)
+        }
+      }, [])
     return (
-        <div className="topnav">
+        <div
+        className={"topnav" + (isSticky ? " isSticky" : "")}
+        ref={ref}>
+            <div className="topnavContainer">
+            <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}>
+            <Img
+            id="topnavLogo"
+          fixed={data.logoSecondary.childImageSharp.fixed}
+          className="topnav-logo"
+          imgStyle={{
+            objectFit: "contain",
+          }}
+          alt="Chaney Wealth Management"
+        />
+            </Link>
             <ul>
                 <Link to="/about/"><li>About</li></Link>
                 <Link to="/help/"><li>How I Can Help</li></Link>
                 <Link to="/page-2/"><li>Contact</li></Link>
             </ul>
+            </div>
             <div className="menu-spacer"></div>
-        </div>
+            
+            </div>
     )
 }
 

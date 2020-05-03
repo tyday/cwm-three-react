@@ -58,7 +58,7 @@ const Header = ({siteTitle, isIndex}) => {
           /> */}
       </div>
     )
-  } else{
+  } else if(1==2){
     headerDiv = (
       <div>
         <Link
@@ -79,6 +79,8 @@ const Header = ({siteTitle, isIndex}) => {
         </Link>
     </div>
     )
+  } else {
+    headerDiv = (<div></div>)
   }
   return (
   <header className={headerClass}>

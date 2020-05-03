@@ -29,3 +29,9 @@
     top: 0;
     position: relative;
 }
+.topnav {
+    /* background-color: var(--color-primary); */
+    position: sticky;
+    top: 0;
+    margin-bottom: 2rem;
+  }
