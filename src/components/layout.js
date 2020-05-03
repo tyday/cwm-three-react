@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Menu from "./menu"
+import Footer from "./footer"
 import "./layout.css"
 
 // query MyQuery {
@@ -39,12 +40,8 @@ const Layout = ({ children, isIndex }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <Footer />
     </>
   )
 }
