@@ -35,7 +35,7 @@ query cardOne {
       image_side
     }
   }
-  imageOne: file(relativePath: {eq: "fp_one.bmp"}) {
+  imageOne: file(relativePath: {eq: "fp_one.png"}) {
     id
     publicURL
   }
@@ -45,7 +45,7 @@ query cardOne {
       image_side
     }
   }
-  imageTwo: file(relativePath: {eq: "fp_two.bmp"}) {
+  imageTwo: file(relativePath: {eq: "fp_two.png"}) {
     id
     publicURL
   }
