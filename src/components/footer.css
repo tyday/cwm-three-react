@@ -1,11 +1,26 @@
 footer{
-    background-color: var(--color-primary);
-    color: var(--link-color-menu, #fff);
-    padding: 66px 40px;
+    /* background-color: var(--color-primary);
+    color: var(--link-color-menu, #fff); */
+    padding: 1rem;
     text-align: center;
-    
+    border-top: 2px solid #2F4268;    
 }
-a {
-    color: var(--link-color-menu, #fff);
-    /* text-decoration: none; */
+footer ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+}
+footer li a {
+    color:  #000000;
+}
+.side-border{
+    border-left: 2px solid;
+    height: 1rem;
+}
+footer p{
+    text-align: left;
+    font-size: 80%;
+    line-height: 1em;
 }

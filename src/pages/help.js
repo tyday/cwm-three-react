@@ -4,14 +4,31 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const HelpPage = () => (
+import HomepageCard from "../components/homepageCard"
+
+const HelpPage = ({data, }) => (
   <Layout>
     <SEO title="How I can help" />
-    <h1>Hi from the How I can help page</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, quidem vel? Quae nemo nobis distinctio architecto facilis quas fuga accusamus aspernatur. Illum soluta dolor sunt pariatur impedit ad asperiores dolorem?</p>
-    <p>Welcome to How I can help page</p>
-    <Link to="/">Go back to the homepage</Link>
+    <h2>Let’s Do This Together.</h2>
+    <HomepageCard card_info={data.cardOne} image_info={data.imageOne}/>
   </Layout>
 )
 
+export const cardQuery = graphql`
+  query howtohelp {
+    cardOne: markdownRemark(frontmatter: {title: {eq: "h2h_one"}}) {
+      html
+      frontmatter {
+        image_side
+      }
+    }
+    imageOne: file(relativePath: {eq: "help.png"}) {
+      childImageSharp{
+        fixed(width:500) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 export default HelpPage

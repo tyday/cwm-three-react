@@ -1,15 +1,17 @@
 .fpCard{
     display: flex;
     flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 .fpCard-text{
     /* display: block; */
-    flex: 3 1 607px;
+    flex: 1 1 407px;
 }
 .fpCard-image{
     /* display: block; */
-    flex: 1 1 607px;
+    flex: 2 1 607px;
 }
 .fpCard-image.fpCard-image--large{
-    flex: 1 1 800px;
+    flex: 2 1 800px;
 }

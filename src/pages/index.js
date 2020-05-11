@@ -29,8 +29,11 @@ query cardOne {
     }
   }
   imageOne: file(relativePath: {eq: "fp_one.png"}) {
-    id
-    publicURL
+    childImageSharp{
+      fixed(width:500) {
+        ...GatsbyImageSharpFixed
+      }
+    }
   }
   cardTwo: markdownRemark(frontmatter: {title: {eq: "fp_two"}}) {
     html
@@ -39,8 +42,11 @@ query cardOne {
     }
   }
   imageTwo: file(relativePath: {eq: "fp_two.png"}) {
-    id
-    publicURL
+    childImageSharp{
+      fixed(width:500) {
+        ...GatsbyImageSharpFixed
+      }
+    }
   }
   cardThree: markdownRemark(frontmatter: {title: {eq: "fp_three"}}) {
     html

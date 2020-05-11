@@ -4,11 +4,13 @@ import "./footer.css"
 const Footer = () => {
     return (
         <footer>
-            <h2>Chaney Wealth Management</h2>
-            <p><a
-            href="https://www.google.com/maps/search/?api=1&query=7530+Slate+Ridge+Blvd%2CReynoldsburg%2COH%2C43068"
-            >7530 Slate Ridge Blvd, Reynoldsburg, OH 43068</a></p>
-            <p><a href="tel:+16148683900">(614) 868-3900</a></p>
+            <ul>
+            <li>Chaney Wealth Management</li>
+            <li className="side-border"></li>
+            <li><a href="mailto:info@chaneywealth.com">info@chaneywealth.com</a></li>
+            <li className="side-border"></li>
+            <li><a href="tel:+16148683900">(614) 868-3900</a></li>
+            </ul>
             <p>
             Check the background of your financial professional on FINRA's&nbsp;
             <a href="https://brokercheck.finra.org">BrokerCheck</a>. 

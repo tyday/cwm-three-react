@@ -20,6 +20,7 @@ ul a {
   position: sticky;
   top: -1px;
   margin-bottom: 2rem;
+  z-index: 100;
 }
 .topnavContainer{  
   padding-top: 2px;

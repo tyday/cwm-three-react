@@ -4,7 +4,7 @@ import "./menu.css"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Menu = ({children, sticky=false, ...rest}) => {
+const Menu = ({children, sticky=false, isIndex, ...rest}) => {
     const className = "topnav-logo"
     const [isSticky, setIsSticky] = useState(false)
     const ref = React.createRef()    
@@ -36,7 +36,7 @@ const Menu = ({children, sticky=false, ...rest}) => {
       }, [])
     return (
         <div
-        className={"topnav" + (isSticky ? " isSticky" : "")}
+        className={"topnav" + (isSticky | !isIndex ? " isSticky" : "")}
         ref={ref}>
             <div className="topnavContainer">
             <Link

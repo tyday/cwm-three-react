@@ -31,7 +31,7 @@ const Layout = ({ children, isIndex }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} isIndex={isIndex} />
-      <Menu />
+      <Menu isIndex={isIndex}/>
       <div
         style={{
           margin: `0 auto`,
