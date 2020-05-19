@@ -13,6 +13,7 @@ import Header from "./header"
 import Menu from "./menu"
 import Footer from "./footer"
 import "./layout.css"
+import "./domain.css"
 
 // query MyQuery {
   
