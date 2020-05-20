@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Menu from "./menu"
 import Footer from "./footer"
+import Contact from "./contact"
 import "./layout.css"
 import "./domain.css"
 
@@ -42,6 +43,7 @@ const Layout = ({ children, isIndex }) => {
       >
         <main>{children}</main>
       </div>
+      <Contact />
       <Footer />
     </>
   )

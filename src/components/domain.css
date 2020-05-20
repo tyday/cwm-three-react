@@ -1,9 +1,30 @@
-.about-image{
-    float: left;
-    margin: 0 1rem 1rem 0;
+.about-image {
+  float: left;
+  margin: 0 1rem 1rem 0;
 }
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+  content: "";
+  clear: both;
+  display: table;
+}
+.button {
+    border-radius: 3px;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px;
+    transition: all 0.1s;
+    font-size: large;
+    cursor: pointer;
+}
+.button:hover {
+    transform: translate(0, -2px);
+    box-shadow: 2px 2px 5px var(--color-primary-shadow);
+}
+.button-dark {
+    background-color: var(--color-primary);
+    color: white;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}

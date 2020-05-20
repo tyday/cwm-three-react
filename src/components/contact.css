@@ -1,0 +1,49 @@
+form{
+    background-color: red;
+}
+.modal.modal-show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    z-index: 110;
+    /* top: 0;  */
+    transform: translateY(-100vh);
+}
+.modal {
+    opacity: 0;
+    /* display: none;
+    visibility: hidden; */
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 100vh;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: var(--main-color-dark-grey-translucent);
+    -webkit-backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(1.5px);
+    padding: 4rem;
+    transition: visibility 0s, opacity .3s, transform .3s, z-index 1s step-start;
+}
+.contact-form {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+        margin-bottom: auto;
+    background-color: var(--main-color-highlight-solid, hsl(221, 80%, 86%));
+    border-radius: 10px;
+    box-shadow: var(--main-box-shadow, hsla(195, 10%, 8%, 0.5));
+    margin-bottom: 20px;
+    flex: 0 1 500px;
+}
+#contactForm label{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#contactForm input{
+    width: 350px;
+}

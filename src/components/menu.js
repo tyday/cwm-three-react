@@ -7,7 +7,11 @@ import { useStaticQuery, graphql } from "gatsby"
 const Menu = ({children, sticky=false, isIndex, ...rest}) => {
     const className = "topnav-logo"
     const [isSticky, setIsSticky] = useState(false)
-    const ref = React.createRef()    
+    const ref = React.createRef()   
+    const handleClick = () =>{
+      const ele = document.getElementById("contactForm")
+      ele.classList.toggle('modal-show')
+    } 
     console.log(ref)
     const data = useStaticQuery(graphql`
     query topnavlogo {
@@ -58,7 +62,7 @@ const Menu = ({children, sticky=false, isIndex, ...rest}) => {
             <ul>
                 <Link to="/about/"><li>About</li></Link>
                 <Link to="/help/"><li>How I Can Help</li></Link>
-                <Link to="/page-2/"><li>Contact</li></Link>
+                <a href="#contactForm" onClick={handleClick}><li>Contact</li></a>
             </ul>
             </div>
             <div className="menu-spacer"></div>
