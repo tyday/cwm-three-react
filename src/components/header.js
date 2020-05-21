@@ -17,6 +17,9 @@ const Header = ({siteTitle, isIndex}) => {
           }
         }
       }
+      heroVideo: file(relativePath: {eq: "NewVideo.mp4"}) {
+        publicURL
+      }
       logo: file(relativePath: {eq: "Existing Logo - White.png"}) {
         childImageSharp {
           fixed( height: 200) {
@@ -47,15 +50,13 @@ const Header = ({siteTitle, isIndex}) => {
           className="siteLogo"
           alt="Chaney Wealth Management"
         />
-        <img className="heroImage"  
+        <div className="siteLogo-gradient"></div>
+        {/* <img className="heroImage"  
           src={data.heroImage.childImageSharp.fluid.originalImg} 
-          alt="" srcSet={data.heroImage.childImageSharp.fluid.srcSet}/>
-        {/* <Img 
-          fluid={data.heroImage.childImageSharp.fluid} 
-          style={{ maxHeight: "100%" }}
-          className="heroImage" fit="OUTSIDE" 
-          imgStyle={{ objectFit: "cover", }}
-          /> */}
+          alt="" srcSet={data.heroImage.childImageSharp.fluid.srcSet}/> */}
+          <video src={data.heroVideo.publicURL} className="heroImage" playsinline autoPlay muted loop  id="bgvideo" >
+          {/* <source src={data.heroVideo.publicURL} type="video/mp4"></source> */}
+          </video>
       </div>
     )
   } else if(1==2){
