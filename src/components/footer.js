@@ -24,8 +24,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-// 7530 Slate Ridge Blvd
-//     Reynoldsburg, OH 43068
-//     Office: (614) 868-3900
-//     joel.chaney@lpl.com

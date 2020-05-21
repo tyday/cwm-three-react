@@ -25,3 +25,11 @@ footer p{
     font-size: 80%;
     line-height: 1em;
 }
+@media screen and (max-width: 900px) {
+    footer ul{
+        flex-direction: column;
+    }
+    .side-border{
+        border-left: none;
+    }
+}
