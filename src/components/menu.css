@@ -1,4 +1,4 @@
-.topnav ul {
+/* .topnav ul {
   flex-grow: 2;
   display: flex;
   flex-direction: row;
@@ -7,21 +7,21 @@
   color: var(--text-color-light);
   margin-bottom: 0;
   margin-left: 0;
-  /* background-color: var(--color-primary); */
-}
+  background-color: var(--color-primary);
+} */
 ul li {
   margin: 2px 16px;
 }
-ul a {
+/* ul a {
   color: var(--link-color-menu, #fff);
   text-decoration: none;
-}
-.topnav {
+} */
+/* .topnav {
   position: sticky;
   top: -1px;
   margin-bottom: 2rem;
   z-index: 100;
-}
+} */
 .topnavContainer{  
   padding-top: 2px;
   display: flex;
@@ -51,3 +51,54 @@ ul a {
   transition: opacity .3s;
   opacity: 0;
 }
+.topnav .menu-hamburger{
+  margin-top: -3.5rem;
+  background-color: var(--color-primary);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+nav{width:auto; float:right;}
+nav ul{display:table; float:right; margin-bottom: 0;}
+nav ul li{float:left; list-style: none;}
+nav ul li:last-child{padding-right:0px;}
+nav ul li a{color:var(--link-color-menu, #fff); font-size:18px; padding: 25px 20px; display:inline-block; transition: all 0.5s ease 0s; text-decoration: none;}
+nav ul li a:hover{background-color:var(--link-color-menu, #fff); color:#000000; transition: all 0.5s ease 0s;}
+nav ul li a:hover i{color:#000000; transition: all 0.5s ease 0s;}
+nav ul li a i{padding-right:10px; color:var(--link-color-menu, #fff); transition: all 0.5s ease 0s;}
+
+.toggle-menu {margin-right: 2rem;}
+.toggle-menu ul{display:table; width:20px;}
+.toggle-menu ul li{width:100%; height:3px; background-color:var(--link-color-menu, #fff); margin-bottom:4px;}
+.toggle-menu ul li{text-decoration: none; list-style: none;}
+.toggle-menu ul li:last-child{margin-bottom:0px;}
+
+input[type=checkbox], label{display:none;}
+
+@media only screen and (max-width: 980px) {
+  /* header{padding:20px 0px;} */
+  #logo{padding:0px;}
+  input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
+  input[type=checkbox]:fous{background:none;}
+  label {float:right; margin-top:12px ; display:inline-block; cursor:pointer; }
+  input[type=checkbox]:checked ~ nav.menu-wide {display:block;}
+  
+  nav.menu-wide{display:none; position:absolute; right:0px; top:53px; background-color:var(--color-primary, #2f4268); padding:0px; z-index:99;}
+  nav ul{width:auto; margin-left: 0;}
+  nav ul li{float:none; padding:0px; width:100%; display:table;margin-left: 0;}
+  nav ul li a{color:#FFF; font-size:15px; padding:10px 20px; display:block; border-bottom: 1px solid rgba(225,225,225,0.1);}
+  nav ul li a i{color:#FFF; padding-right:13px;}
+  }
+
+/* .menu-collapsed{
+  display: none;
+  width: 200px;
+}
+@media screen and (max-width:600px){
+  .menu-wide{
+    display: none;
+  }
+  .menu-collapsed{
+    display: flex;
+  }
+} */

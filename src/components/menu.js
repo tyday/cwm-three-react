@@ -5,10 +5,20 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Menu = ({children, sticky=false, isIndex, ...rest}) => {
-    const className = "topnav-logo"
+    // const className = "topnav-logo"
     const [isSticky, setIsSticky] = useState(false)
-    const ref = React.createRef()    
+    const ref = createRef()    
     console.log(ref)
+    const menuList = <ul>
+                        <li><Link to="/about/">About</Link></li>
+                          <li><Link to="/help/">How I Can Help</Link></li>
+                          <li><Link to="/page-2/">Contact</Link></li>
+                    </ul>
+    const menuListHamburger = <ul className="menu-hamburger">
+                          <li><Link to="/about/">About</Link></li>
+                          <li><Link to="/help/">How I Can Help</Link></li>
+                          <li><Link to="/page-2/">Contact</Link></li>
+                      </ul>
     const data = useStaticQuery(graphql`
     query topnavlogo {
         logoSecondary: file(relativePath: {eq: "Existing Logo - White.png"}) {
@@ -55,11 +65,11 @@ const Menu = ({children, sticky=false, isIndex, ...rest}) => {
           alt="Chaney Wealth Management"
         />
             </Link>
-            <ul>
-                <Link to="/about/"><li>About</li></Link>
-                <Link to="/help/"><li>How I Can Help</li></Link>
-                <Link to="/page-2/"><li>Contact</li></Link>
-            </ul>
+            <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
+            <input type="checkbox" id="toggle-1"></input>
+              <nav className="menu-wide">
+                {menuList}
+              </nav>
             </div>
             <div className="menu-spacer"></div>
             
