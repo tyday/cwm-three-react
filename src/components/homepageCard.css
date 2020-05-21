@@ -5,13 +5,28 @@
     margin-bottom: 2rem;
 }
 .fpCard-text{
-    /* display: block; */
     flex: 1 1 407px;
 }
 .fpCard-image{
-    /* display: block; */
     flex: 2 1 607px;
 }
 .fpCard-image.fpCard-image--large{
     flex: 2 1 800px;
+}
+
+@media screen and (max-width:700px){
+    .fpCard-text{
+        flex: 1 1;
+    }
+    .fpCard-image{
+        flex: 2 1 200px;
+        width: 80vw;
+        object-fit: contain;
+    }
+    .fpCard-right{
+        flex-direction: column;
+    }
+    .fpCard-left{
+        flex-direction: column-reverse;
+    }
 }

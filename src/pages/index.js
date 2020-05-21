@@ -32,6 +32,9 @@ query cardOne {
       fixed(width:500) {
         ...GatsbyImageSharpFixed
       }
+      fluid(maxWidth:500){
+        ...GatsbyImageSharpFluid
+      }
     }
   }
   cardTwo: markdownRemark(frontmatter: {title: {eq: "fp_two"}}) {
@@ -44,6 +47,9 @@ query cardOne {
     childImageSharp{
       fixed(width:500) {
         ...GatsbyImageSharpFixed
+      }
+      fluid(maxWidth:500){
+        ...GatsbyImageSharpFluid
       }
     }
   }
