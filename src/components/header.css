@@ -1,37 +1,44 @@
-.heroImage{
-    height:80vh;
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    object-fit: cover;
-    object-position: center 10%;
+.heroImage {
+  height: 80vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 10%;
 }
-.siteLogo{
-    z-index: 1;
-    margin-left: calc(50vw - 479px/2);
-    top:30vh;
+.siteLogo {
+  z-index: 1;
+  margin-left: calc(50vw - 479px / 2);
+  top: 30vh;
 
-    /* position: absolute;
+  /* position: absolute;
     z-index: 1;
     bottom: 0; */
 }
-.header-main{
-    height: 80vh;
-    background: #2F4268;
+.header-main {
+  height: 80vh;
+  background: #2f4268;
 }
-.header-secondary{
-    background-color: var(--color-primary);
+.header-secondary {
+  background-color: var(--color-primary);
 }
-.header-secondary .siteLogo{
-    margin-left: 10px;
-    margin-bottom: -2rem;
-    top: 0;
-    position: relative;
+.header-secondary .siteLogo {
+  margin-left: 10px;
+  margin-bottom: -2rem;
+  top: 0;
+  position: relative;
 }
 .topnav {
-    /* background-color: var(--color-primary); */
-    position: sticky;
-    top: 0;
-    margin-bottom: 2rem;
-  }
+  /* background-color: var(--color-primary); */
+  position: sticky;
+  top: 0;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width:700px) {
+    .siteLogo{
+        max-width: 80vw;
+        margin-left: 8vw;
+    }
+}
