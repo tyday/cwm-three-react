@@ -58,14 +58,14 @@ nav ul li a i{padding-right:10px; color:var(--link-color-menu, #fff); transition
 .toggle-menu ul li{text-decoration: none; list-style: none;}
 .toggle-menu ul li:last-child{margin-bottom:0px;}
 
-input[type=checkbox], label{display:none;}
+.topnavContainer input[type=checkbox], label{display:none;}
 
 @media only screen and (max-width: 980px) {
   /* header{padding:20px 0px;} */
   #logo{padding:0px;}
-  input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
-  input[type=checkbox]:fous{background:none;}
-  label {float:right; margin-top:12px ; display:inline-block; cursor:pointer; }
+  .toggle-menu input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
+  .toggle-menu input[type=checkbox]:fous{background:none;}
+  .topnavContainer label {float:right; margin-top:12px ; display:inline-block; cursor:pointer; }
   input[type=checkbox]:checked ~ nav.menu-wide {display:block;}
   
   nav.menu-wide{display:none; position:absolute; right:0px; top:53px; background-color:var(--color-primary, #2f4268); padding:0px; z-index:99;}

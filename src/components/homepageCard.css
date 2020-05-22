@@ -9,6 +9,7 @@
 }
 .fpCard-image{
     flex: 2 1 607px;
+    align-self: center;
 }
 .fpCard-image.fpCard-image--large{
     flex: 2 1 800px;
@@ -19,8 +20,8 @@
         flex: 1 1;
     }
     .fpCard-image{
-        flex: 2 1 200px;
-        width: 80vw;
+        flex: 2 1 300px;
+        width: 90vw;
         object-fit: contain;
     }
     .fpCard-right{

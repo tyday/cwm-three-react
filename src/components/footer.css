@@ -28,6 +28,7 @@ footer p{
 @media screen and (max-width: 900px) {
     footer ul{
         flex-direction: column;
+        margin-left: 0;
     }
     .side-border{
         border-left: none;

@@ -37,6 +37,7 @@ const Header = ({siteTitle, isIndex}) => {
     }
     
   `)
+  console.log(data)
   let headerClass = (isIndex ? "header-main" : "header-secondary")
   let headerDiv;
   if(isIndex){
@@ -51,12 +52,12 @@ const Header = ({siteTitle, isIndex}) => {
           alt="Chaney Wealth Management"
         />
         <div className="siteLogo-gradient"></div>
-        {/* <img className="heroImage"  
+        <img className="heroImage"  
           src={data.heroImage.childImageSharp.fluid.originalImg} 
-          alt="" srcSet={data.heroImage.childImageSharp.fluid.srcSet}/> */}
-          <video src={data.heroVideo.publicURL} className="heroImage" playsinline autoPlay muted loop  id="bgvideo" >
-          {/* <source src={data.heroVideo.publicURL} type="video/mp4"></source> */}
-          </video>
+          alt="" srcSet={data.heroImage.childImageSharp.fluid.srcSet}/>
+          {/* <video src={data.heroVideo.publicURL} className="heroImage" playsinline autoPlay muted loop  id="bgvideo" >
+          <source src="/static/489fa6b5960d35915c46cb65c4c544cf/NewVideo.mp4" type="video/mp4"></source>
+          </video> */}
       </div>
     )
   } else if(1==2){
